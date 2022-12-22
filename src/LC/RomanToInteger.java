@@ -1,3 +1,5 @@
+package LC;
+
 public class RomanToInteger {
     public static int convertChar(char c) {
         return switch (c) {
