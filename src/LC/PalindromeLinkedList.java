@@ -1,6 +1,6 @@
 package LC;
 import java.util.LinkedList;
-//234 Palindrome Linked List
+//234. Palindrome Linked List
 
 // Definition for singly-linked list.
 class ListNode {
