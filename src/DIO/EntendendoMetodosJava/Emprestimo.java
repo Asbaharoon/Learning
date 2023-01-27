@@ -4,7 +4,7 @@ import static java.lang.Math.pow;
 
 public class Emprestimo {
 
-    public static void main(String[] args) {
+    protected static void emprestimo() {
         Scanner leitor = new Scanner(System.in);
 
         System.out.println("Informe o valor a ser solicitado em reais (R$)");

@@ -1,6 +1,6 @@
-package DIO.EntendendoMetodosJava;
+package DIO.ProgramacaoOrientadaAObjetos;
 
-public class Carro {
+public class Carro extends Veiculo {
     String cor;
     String modelo;
     int capacidadeTanque;
@@ -41,4 +41,8 @@ public class Carro {
     double totalValorTanque(float valorCombustivel){
         return capacidadeTanque * valorCombustivel;
     }
+
+
 }
+
+

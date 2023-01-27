@@ -2,7 +2,7 @@ package DIO.EntendendoMetodosJava;
 import java.util.Scanner;
 
 public class Mensagem {
-    public static void main(String[] args) {
+    protected static void mensagem() {
         Scanner leitor = new Scanner(System.in);
         int hora = leitor.nextInt();
         while (hora < 0 || hora > 24){
