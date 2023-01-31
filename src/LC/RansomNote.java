@@ -20,7 +20,8 @@ public class RansomNote {
             int ammount = 1;
             if (base.containsKey(magazine.charAt(i))){
                 ammount = (int) base.get(magazine.charAt(i));
-                base.replace(magazine.charAt(i),ammount++);
+                ammount++;
+                base.replace(magazine.charAt(i),ammount);
             }
             else base.put(magazine.charAt(i),ammount);
         }
@@ -29,7 +30,8 @@ public class RansomNote {
             int ammount = -1;
             if (base.containsKey(ransomNote.charAt(i))){
                 ammount = (int) base.get(ransomNote.charAt(i));
-                base.replace(ransomNote.charAt(i),ammount--);
+                ammount--;
+                base.replace(ransomNote.charAt(i),ammount);
             }
             else base.put(ransomNote.charAt(i),ammount);
         }
