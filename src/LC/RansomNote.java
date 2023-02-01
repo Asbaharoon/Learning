@@ -2,45 +2,40 @@ package LC;
 
 // 383. Ransom Note
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class RansomNote {
     public static boolean canConstruct() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type ransomNote");
-        String ransomNote = scanner.nextLine();
+        String ransomNote = scanner.nextLine().toLowerCase();
         System.out.println("Type magazine");
-        String magazine = scanner.nextLine();
+        String magazine = scanner.nextLine().toLowerCase();
 
-        HashMap base = new HashMap();
-        //return magazine.contains(ransomNote);
+        if (magazine.length() < ransomNote.length()) return false;
+        if (magazine.contains(ransomNote)) return true;
 
-        for (int i = 0; i < magazine.length(); i++){
-            int ammount = 1;
-            if (base.containsKey(magazine.charAt(i))){
-                ammount = (int) base.get(magazine.charAt(i));
-                ammount++;
-                base.replace(magazine.charAt(i),ammount);
-            }
-            else base.put(magazine.charAt(i),ammount);
+        int [] base = new int[26];
+        for (int i : base) {
+            base[i] = 0;
         }
 
-        for (int i = 0; i < ransomNote.length(); i++){
-            int ammount = -1;
-            if (base.containsKey(ransomNote.charAt(i))){
-                ammount = (int) base.get(ransomNote.charAt(i));
-                ammount--;
-                base.replace(ransomNote.charAt(i),ammount);
+        for (int i = 0; i < magazine.length(); i++) {
+            if (i < ransomNote.length()){
+                base[ransomNote.charAt(i) - 'a']--;
             }
-            else base.put(ransomNote.charAt(i),ammount);
+            base[magazine.charAt(i) - 'a']++;
         }
 
         boolean answer = true;
 
-        for (Object value: base.values()){
-            if ((int) value < 0) answer = false;
+        for (int value: base){
+            if (value < 0) {
+                answer = false;
+                break;
+            }
         }
+
         return answer;
     }
 
