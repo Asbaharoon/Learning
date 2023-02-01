@@ -12,31 +12,17 @@ public class RansomNote {
         System.out.println("Type magazine");
         String magazine = scanner.nextLine().toLowerCase();
 
-        if (magazine.length() < ransomNote.length()) return false;
-        if (magazine.contains(ransomNote)) return true;
+        if (ransomNote.length() > magazine.length()) return false;
+        int[] alphabets_counter = new int[26];
 
-        int [] base = new int[26];
-        for (int i : base) {
-            base[i] = 0;
+        for (char c : magazine.toCharArray())
+            alphabets_counter[c-'a']++;
+
+        for (char c : ransomNote.toCharArray()){
+            if (alphabets_counter[c-'a'] == 0) return false;
+            alphabets_counter[c-'a']--;
         }
-
-        for (int i = 0; i < magazine.length(); i++) {
-            if (i < ransomNote.length()){
-                base[ransomNote.charAt(i) - 'a']--;
-            }
-            base[magazine.charAt(i) - 'a']++;
-        }
-
-        boolean answer = true;
-
-        for (int value: base){
-            if (value < 0) {
-                answer = false;
-                break;
-            }
-        }
-
-        return answer;
+        return true;
     }
 
     public static void main(String[] args) {
