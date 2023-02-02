@@ -1,47 +1,38 @@
 package LC;
 
+import java.util.Arrays;
+
 public class TheKWeakestRowsInAMatrix {
 
-    public static void sortingWeakest(int[][]force){
-        boolean sorted = true;
-        for (int i = 0; i < force[0].length - 1; i++){
-            if (force[0][i] > force[0][i + 1]){
-                sorted = false;
-                break;
-            }
-        }
-        if (!sorted){
-            for (int i = 0; i < force[0].length - 1; i++){
-                if (force[0][i] > force[0][i + 1]){
-                    int temp = force[0][i];
-                    force[0][i] = force[0][i + 1];
-                    force[0][i + 1] = temp;
+    public static int[] kWeakestRows(int[][] mat, int k) {
+        int rows = mat.length;
+        int cols = mat[0].length;
 
-                    temp = force[1][i];
-                    force[1][i] = force[1][i + 1];
-                    force[1][i + 1] = temp;
+        int[] score = new int[rows];
+        int j;
+        for (int i = 0; i < rows; i++) {
+            j = 0;
+            for (; j < cols; j++) {
+                if (mat[i][j] == 0) {
+                    break;
                 }
             }
-            sortingWeakest(force);
-        }
-    }
-
-    public static int[] kWeakestRows(int[][] mat, int k) {
-        int[][] force = new int[2][mat.length];
-
-        for (int i = 0; i < mat.length; i++) {
-            for (int j = 0; j < mat[0].length; j++) {
-                force[0][i] += mat[i][j];
-            }
-            force[1][i] = i;
+            /*
+             * we can create a score to match the sort condition from description
+             * score = soldiersCount * rows + currentRowIndex
+             * so we can get soldiersCount by score / rows, and get rowIndex by score % rows
+             * hash score and rows
+             */
+            score[i] = j * rows + i;
         }
 
-        sortingWeakest(force);
+        Arrays.sort(score);
+        for (int i = 0; i < score.length; i++) {
+            // get rowIndex
+            score[i] = score[i] % rows;
+        }
 
-        int[] answer = new int[k];
-        System.arraycopy(force[1], 0, answer, 0, k);
-
-        return answer;
+        return Arrays.copyOfRange(score, 0, k);
     }
 
     public static void main(String[] args) {
