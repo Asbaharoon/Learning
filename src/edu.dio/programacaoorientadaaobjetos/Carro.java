@@ -1,4 +1,4 @@
-package DIO.ProgramacaoOrientadaAObjetos;
+package edu.dio.ProgramacaoOrientadaAObjetos;
 
 public class Carro extends Veiculo {
     String cor;

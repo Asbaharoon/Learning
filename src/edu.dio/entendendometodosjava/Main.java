@@ -1,4 +1,4 @@
-package DIO.EntendendoMetodosJava;
+package edu.dio.EntendendoMetodosJava;
 
 public class Main {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package DIO.EntendendoMetodosJava;
+package edu.dio.EntendendoMetodosJava;
 
 public class AreaDosQuadrilateros {
     protected static double area(double lado){ return lado * lado;}

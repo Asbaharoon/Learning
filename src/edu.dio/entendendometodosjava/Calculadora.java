@@ -1,4 +1,4 @@
-package DIO.EntendendoMetodosJava;
+package edu.dio.EntendendoMetodosJava;
 
 public class Calculadora {
     protected static double soma (double a, double b){

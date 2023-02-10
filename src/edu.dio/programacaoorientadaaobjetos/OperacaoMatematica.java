@@ -1,4 +1,4 @@
-package DIO.ProgramacaoOrientadaAObjetos;
+package edu.dio.ProgramacaoOrientadaAObjetos;
 
 public interface OperacaoMatematica {
     void soma (double x, double y);

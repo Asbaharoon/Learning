@@ -1,4 +1,4 @@
-package DIO.ProgramacaoOrientadaAObjetos;
+package edu.dio.ProgramacaoOrientadaAObjetos;
 
 public class Main {
     public static void main(String[] args) {

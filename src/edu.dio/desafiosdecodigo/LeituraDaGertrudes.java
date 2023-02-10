@@ -1,4 +1,4 @@
-package DIO;
+package edu.dio.DesafiosDeCodigo;
 import java.util.Scanner;
 
 /* Sua tia Gertrudes é uma leitora assídua. E ela gostaria de ter um aplicativo que dissesse para ela, de acordo com o

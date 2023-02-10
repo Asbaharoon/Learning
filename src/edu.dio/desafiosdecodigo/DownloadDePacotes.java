@@ -1,4 +1,4 @@
-package DIO;
+package edu.dio.DesafiosDeCodigo;
 import java.util.Scanner;
 /* Você foi contratado para criar um gerenciador de pacotes. Porém, o que restou para você fazer foi o contador de
 porcentagem de download dos pacotes. Mas como o espaço para essa informação ficou pequeno, a empresa optou por fazer

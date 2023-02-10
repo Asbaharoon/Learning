@@ -1,4 +1,4 @@
-package DIO.EntendendoMetodosJava;
+package edu.dio.EntendendoMetodosJava;
 import java.util.Scanner;
 
 public class Mensagem {

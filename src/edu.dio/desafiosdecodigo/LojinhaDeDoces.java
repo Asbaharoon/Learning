@@ -1,4 +1,4 @@
-package DIO;
+package edu.dio.DesafiosDeCodigo;
 import java.util.Scanner;
 
 /* Uma lojinha de doces tem muitos clientes por ser ao lado de uma escola. Para aumentar as vendas o dono resolveu

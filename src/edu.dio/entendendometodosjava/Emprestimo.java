@@ -1,4 +1,4 @@
-package DIO.EntendendoMetodosJava;
+package edu.dio.EntendendoMetodosJava;
 import java.util.Scanner;
 import static java.lang.Math.pow;
 

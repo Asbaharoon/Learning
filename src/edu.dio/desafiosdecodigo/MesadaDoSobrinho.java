@@ -5,7 +5,7 @@ programação, vai criar um programa que com as entradas do seu sobrinho vai cal
 dinheiro que ele terá em X meses.
  */
 
-package DIO;
+package edu.dio.DesafiosDeCodigo;
 import java.util.Scanner;
 
 public class MesadaDoSobrinho {

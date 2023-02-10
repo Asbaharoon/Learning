@@ -1,4 +1,4 @@
-package DIO;
+package edu.dio.DesafiosDeCodigo;
 import java.util.Scanner;
 
 /* A prefeitura de uma cidade A instalou uma câmera para verificar quem estava acima da velocidade permitida na rodovia
