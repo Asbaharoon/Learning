@@ -1,4 +1,12 @@
+**/.idea
 .idea
+**/lib
 lib
-out
+**/out
+/out
 Learning.iml
+git_toolbox.prj.xml
+workspace.xml
+**.xml
+Learning.iml
+vcs.xml
