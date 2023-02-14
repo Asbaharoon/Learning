@@ -41,10 +41,31 @@ public class ListaDuplamenteEncadeada <T> {
         }
     }
 
+    public boolean checkIndex (int index){ return index > 0 && index <= size(); }
+
     //TODO add(index) (adiciona elemento no índice index) - implementado adição no começo e final, falta demais índices
     public void add (int index, T object){
+        if (checkIndex(index)) {
+            int size = size();
+            if (index == size) {
+                add(object);
+            } else if (index == 0) {
+                No tempNo = noInicial;
+                noInicial.setObject(object);
+                noInicial.setNoPosterior(tempNo);
+                tempNo.setNoAnterior(noInicial);
+            } else if (index < size) {
+
+
+
+            }
+        }
+    }
+
+    //TODO get
+    public T get (int index){
         int size = size();
-        if (index == size) {
+        if (index <= size) {
             add(object);
         } else if (index == 0){
             No tempNo = noInicial;
@@ -53,10 +74,11 @@ public class ListaDuplamenteEncadeada <T> {
             tempNo.setNoAnterior(noInicial);
         } else if (index < size){
 
-        }
 
+        }
+        return object;
     }
-    //TODO get
+
     //TODO getNo
     //TODO remove
     //TODO toString
