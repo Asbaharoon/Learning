@@ -1,47 +1,47 @@
 package dio.estruturadedadosjava.listaduplamenteencadeada;
 
-public class No <T> {
-    private T object;
-    private No noAnterior;
-    private No noPosterior;
+public class No<T> {
+    private T valor;
+    private No<T> noAnterior;
+    private No<T> noPosterior;
 
     public No(){
     }
 
-    public No(T object) {
-        this.object = object;
+    public No(T valor) {
+        this.valor = valor;
         this.noAnterior = null;
         this.noPosterior = null;
     }
 
-    public T getObject() {
-        return object;
+    public T getValor() {
+        return valor;
     }
 
-    public void setObject(T object) {
-        this.object = object;
+    public void setValor(T valor) {
+        this.valor = valor;
     }
 
-    public No getNoAnterior() {
+    public No<T> getNoAnterior() {
         return noAnterior;
     }
 
-    public void setNoAnterior(No noAnterior) {
+    public void setNoAnterior(No<T> noAnterior) {
         this.noAnterior = noAnterior;
     }
 
-    public No getNoPosterior() {
+    public No<T> getNoPosterior() {
         return noPosterior;
     }
 
-    public void setNoPosterior(No noPosterior) {
+    public void setNoPosterior(No<T> noPosterior) {
         this.noPosterior = noPosterior;
     }
 
     @Override
     public String toString() {
         return "No{" +
-                "object=" + object +
+                "valor=" + valor +
                 '}';
     }
 }
