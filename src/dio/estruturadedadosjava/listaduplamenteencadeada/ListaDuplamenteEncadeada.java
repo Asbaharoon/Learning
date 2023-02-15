@@ -16,9 +16,8 @@ public class ListaDuplamenteEncadeada <T> {
 
     //TODO size - falta testar
     public int size(){
-        int size;
+        int size = isEmpty() ? 0 : 1;
         No tempNo = noInicial;
-        size = tempNo == null ? 0 : 1;
         while (tempNo.getNoPosterior() != null){
             size ++;
             tempNo = tempNo.getNoPosterior();
@@ -43,7 +42,7 @@ public class ListaDuplamenteEncadeada <T> {
 
     public boolean checkIndex (int index){ return index > 0 && index <= size(); }
 
-    //TODO add(index) (adiciona elemento no índice index) - implementado adição no começo e final, falta demais índices
+    //TODO add(index) (adiciona elemento no índice index) - falta testar
     public void add (int index, T object){
         if (checkIndex(index)) {
             int size = size();
@@ -55,9 +54,17 @@ public class ListaDuplamenteEncadeada <T> {
                 noInicial.setNoPosterior(tempNo);
                 tempNo.setNoAnterior(noInicial);
             } else if (index < size) {
-
-
-
+                int contadorPosicao = index;
+                No noTemp = noInicial;
+                while (contadorPosicao != 0){
+                    noTemp = noTemp.getNoPosterior();
+                    contadorPosicao --;
+                }
+                No novoNo = new No(object);
+                novoNo.setNoAnterior(noTemp.getNoAnterior());
+                novoNo.setNoPosterior(noTemp);
+                noTemp.setNoAnterior(novoNo);
+                noTemp.getNoAnterior().setNoPosterior(novoNo);
             }
         }
     }
