@@ -18,7 +18,6 @@ public class ListaDuplamenteEncadeada <T> {
         if (isEmpty()){
             throw new RuntimeException ("Método inválido - Lista vazia");
         }
-
     }
 
     //TODO size - concluído
@@ -47,8 +46,12 @@ public class ListaDuplamenteEncadeada <T> {
         }
     }
 
-    //TODO add(index) (adiciona elemento no índice index) - não está funcionando 0 < index < size
+    //TODO add(index) (adiciona elemento no índice index) - concluído
     public void add (int index, T object){
+
+        No<T> novoNo = new No<>(object);
+        No<T> noTemp;
+
         int size = this.size();
 
         if (index < 0 || index > size){
@@ -57,18 +60,20 @@ public class ListaDuplamenteEncadeada <T> {
 
         if (index == size) {
             add(object);
-        } else if (index == 0) {//NÃO ESTÁ FUNCIONANDO
-            No<T> tempNo = noInicial;
-            noInicial.setValor(object);
-            noInicial.setNoPosterior(tempNo);
-            tempNo.setNoAnterior(noInicial);
-        } else if (index < size) {//NÃO ESTÁ FUNCIONANDO
-            No<T> noTemp = this.getNo(index);
-            No<T> novoNo = new No<>(object);
+        } else if (index == 0) {
+            noTemp = noInicial;
+            noInicial = novoNo;
+            noInicial.setNoPosterior(noTemp);
+            noTemp.setNoAnterior(noInicial);
+        } else {
+            noTemp = this.getNo(index);
+
+            noTemp.getNoAnterior().setNoPosterior(novoNo);
+
             novoNo.setNoAnterior(noTemp.getNoAnterior());
             novoNo.setNoPosterior(noTemp);
+
             noTemp.setNoAnterior(novoNo);
-            noTemp.getNoAnterior().setNoPosterior(novoNo);
         }
     }
 
@@ -97,7 +102,7 @@ public class ListaDuplamenteEncadeada <T> {
         return getNo(index).getValor();
     }
 
-    //TODO remove - não está funcionando 0 < index < size -1
+    //TODO remove - concluído
     public T remove (int index){
         checkIndex(index);
         No<T> noRemovido = this.getNo(index);
@@ -105,7 +110,7 @@ public class ListaDuplamenteEncadeada <T> {
             noInicial = noInicial.getNoPosterior();
         } else if (index == size() - 1){
             noRemovido.getNoAnterior().setNoPosterior(null);
-        } else {//NÃO ESTÁ FUNCIONANDO
+        } else {
             noRemovido.getNoAnterior().setNoPosterior(noRemovido.getNoPosterior());
             noRemovido.getNoPosterior().setNoAnterior(noRemovido.getNoAnterior());
         }
